@@ -45,7 +45,16 @@ pip install xlwt openpyxl xlsxwriter xlrd
 # Cómo abrir un Excel
 
 ```python
-TO-DO
+import pandas as pd
+
+import os
+import pathlib
+current_dir = pathlib.Path(__file__).parent.resolve()
+
+file = os.path.join(current_dir, '..', 'datos','ejemplo1.xlsx')
+
+xls = pd.ExcelFile(file)
+df = pd.read_excel(xls, 'Hoja1')
 ```
 <!-- .element style="font-size: 1em" -->
 - Esto siempre va a ser igual
